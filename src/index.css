@@ -1,0 +1,23 @@
+:root {
+  color-scheme: dark;
+  background-color: #0d1117; /* GitHub Dark background */
+  color: #c9d1d9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}

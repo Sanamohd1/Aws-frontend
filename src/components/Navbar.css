@@ -1,0 +1,62 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background-color: #161b22; /* GitHub dark theme background */
+  border-bottom: 1px solid #30363d;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't cause horizontal scrolling */
+}
+
+/* Container for Logo + Name */
+nav a div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+/* Remove underlines and fix colors for ALL links */
+nav a {
+  text-decoration: none !important; 
+  color: #f0f6fc;
+  display: flex;
+  align-items: center;
+}
+
+/* Container for Right-side links */
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* Space between "Profile", "Issues", etc. */
+}
+
+nav h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+nav p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #c9d1d9;
+  transition: color 0.2s;
+}
+
+/* Hover effects */
+nav p:hover {
+  color: #58a6ff; /* GitHub Blue */
+}
+
+nav a:hover {
+  text-decoration: none; /* Double check to prevent underline on hover */
+}

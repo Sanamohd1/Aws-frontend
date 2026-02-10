@@ -1,0 +1,389 @@
+/* Base Reset and Layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.repository-page {
+  background-color: #0d1117;
+  min-height: 100vh;
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repo-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 24px 32px;
+}
+
+/* --- REPOSITORY HEADER --- */
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items to the top */
+  margin-bottom: 24px;
+}
+
+.repo-title-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+}
+.separator{
+  font-weight: 400;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.repo-owner {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.repo-owner:hover { text-decoration: underline; }
+
+.repo-name-title {
+  color: #58a6ff;
+  font-weight: 300;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.repo-visibility {
+  font-size: 12px;
+  padding: 2px 10px;
+  border: 1px solid #30363d;
+  border-radius: 2em;
+  color: #8b949e;
+  margin-left: 8px;
+}
+
+/* --- ACTION BUTTONS (Star, Fork) --- */
+.repo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 5px 12px;
+  color: #c9d1d9;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  margin: 19px 12px;
+}
+
+.action-btn:hover {
+  background-color: #30363d;
+  border-color: #8b949e;
+}
+
+/* Specific styling for Starred state */
+.action-btn.starred {
+  background-color: #30363d;
+}
+
+.action-btn.starred .icon {
+  color: #e3b341;
+}
+
+.count-badge {
+  background-color: #30363d;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+/* --- REPOSITORY NAVIGATION --- */
+.repo-nav {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #30363d;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.repo-nav button {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px;
+  color: #c9d1d9;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.repo-nav button.active {
+  border-bottom-color: #f78166; /* GitHub-style orange underline */
+  font-weight: 600;
+}
+
+/* --- MAIN CONTENT GRID --- */
+.repo-content {
+  display: grid;
+  grid-template-columns: 1fr 296px; /* Main Code + Sidebar */
+  gap: 32px;
+  width: 100%;
+}
+
+/* File Explorer */
+.file-explorer {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #0d1117;
+  margin-bottom: 24px;
+}
+
+.file-header {
+  background-color: #161b22;
+  padding: 12px 16px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.author-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.file-item {
+  display: grid;
+  grid-template-columns: 32px 1fr 2fr 120px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #30363d;
+  align-items: center;
+  font-size: 14px;
+}
+
+.file-item:last-child { border-bottom: none; }
+.file-item:hover { background-color: #161b22; }
+
+.file-icon { font-size: 16px; }
+
+.file-name {
+  color: #c9d1d9;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.file-name:hover { color: #58a6ff; text-decoration: underline; }
+
+.file-message {
+  color: #8b949e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-time {
+  color: #8b949e;
+  text-align: right;
+}
+
+.file-item.empty {
+  display: flex;
+  align-items: center;      /* vertical alignment */
+  justify-content: center;  /* horizontal alignment */
+
+  min-height: 160px;
+  width: 100%;
+
+  color: #8b949e;
+  font-size: 14px;
+
+  border: 1px dashed #30363d;
+  border-radius: 6px;
+
+  background-color: #0d1117;
+}
+
+
+/* --- README SECTION --- */
+.readme-section {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  margin-top: 24px;
+}
+
+.readme-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #30363d;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #0d1117;
+}
+
+
+.readme-content {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* vertical alignment */
+  justify-content: center;  /* horizontal alignment */
+
+  gap: 8px;
+  width: 100%;
+
+  border-bottom: 1px solid #21262d;
+  color: #c9d1d9;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* --- SIDEBAR --- */
+.sidebar-section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #30363d;
+}
+
+.sidebar-section:last-child { border-bottom: none; }
+
+.sidebar-section h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #c9d1d9;
+}
+
+.repo-description {
+  font-size: 14px;
+  color: #8b949e;
+  line-height: 1.5;
+}
+
+.language-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Sidebar Danger Zone Styling */
+.danger-zone {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #f85149; /* Red top border for warning */
+}
+
+.danger-zone h3 {
+  color: #f85149; /* Red header */
+  margin-bottom: 8px;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: all 0.15s ease-in-out;
+}
+
+.action-btn .icon {
+  font-size: 14px;
+}
+
+/*  Danger button (default) */
+.action-btn.danger {
+  border-color: #f85149;
+  color: #f85149;
+  background-color: rgba(8, 8, 8, 0.1);
+}
+
+/* Hover effect */
+.action-btn.danger:hover {
+  background-color: #f85149;
+  color: #ffffff;
+  border-color: #f85149;
+}
+
+/* Active (click) */
+.action-btn.danger:active {
+  background-color: #da3633;
+  border-color: #da3633;
+}
+
+/* Disabled state (optional) */
+.action-btn.danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* Success Toast Notification */
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #238636; /* GitHub Success Green */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+/* --- RESPONSIVENESS --- */
+@media (max-width: 1012px) {
+  .repo-content {
+    grid-template-columns: 1fr;
+    display: grid; grid-template-columns: 1fr 296px;
+  }
+  .repo-container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .repo-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 16px 0;
+  border-bottom: 1px solid #30363d;
+  width: 100%;
+  margin-top: 20px;
+}
+  .file-item {
+    grid-template-columns: 32px 1fr 100px;
+  }
+  .file-message { display: none; }
+}

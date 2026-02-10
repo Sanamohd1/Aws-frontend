@@ -1,0 +1,134 @@
+.repolist-page {
+  background-color: #0d1117;
+  min-height: 100vh;
+  color: #c9d1d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repolist-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 32px 24px;
+}
+
+.repolist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #30363d;
+}
+
+.new-repo-btn {
+  background-color: #238636;
+  color: white;
+  padding: 5px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.repolist-search input {
+  width: 100%;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #c9d1d9;
+  margin-bottom: 24px;
+}
+
+.repo-item {
+  padding: 24px 0;
+  border-bottom: 1px solid #30363d;
+}
+
+.repo-item-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.repo-item-title a {
+  color: #58a6ff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.repo-item-title a:hover { text-decoration: underline; }
+
+.visibility-badge {
+  font-size: 12px;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  padding: 2px 10px;
+  border-radius: 2em;
+}
+
+.repo-item-desc {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 8px;
+}
+
+.repo-item-meta {
+  font-size: 12px;
+  color: #8b949e;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.lang-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #f1e05a; /* JS Yellow */
+  border-radius: 50%;
+}
+
+.star-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: 15px; /* Bigger text */
+  font-weight: 600;
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #c9d1d9;
+}
+
+.star-icon {
+  font-size: 18px; /* Makes just the star symbol bigger */
+}
+
+.star-btn:hover {
+  background-color: #30363d;
+}
+
+.star-btn.starred {
+  color: #e3b341; /* Gold star when active */
+}
+
+/* Style for when the repo is already starred */
+.star-btn.starred {
+  background-color: #30363d;
+  color: #e3b341; /* Golden color for starred state */
+}
+
+.star-count {
+  background-color: #30363d;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #8b949e;
+  margin-left: 4px;
+}
