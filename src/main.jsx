@@ -19,12 +19,6 @@ import StarredRepos from "./components/repo/StarredRepos.jsx";
 import Login from "./components/auth/Login.jsx";
 import Signup from "./components/auth/Signup.jsx";
 
-/* CSS imports */
-import "./components/issue/issue.css";
-import "./components/issue/list.css";
-import "./components/issue/CreateIssue.css";
-import "./components/repo/RepositoryCreation.css";
-
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
