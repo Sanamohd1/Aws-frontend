@@ -23,7 +23,7 @@ const Dashboard = () => {
         }
 
        const response = await fetch(
-  `http://54.91.163.152:3002/repo/user/${userId}`
+  `http://http://52.91.90.194:3002/repo/user/${userId}`
 );
 
 
@@ -41,7 +41,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
   try {
-    const response = await fetch("http://54.91.163.152:3002/repo/all");
+    const response = await fetch("http://52.91.90.194:3002/repo/all");
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

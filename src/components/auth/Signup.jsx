@@ -26,7 +26,7 @@ const Signup = () => {
       setErrorMessage("");
 
     const res = await axios.post(
-  "http://54.91.163.152:3002/signup",
+  "http://52.91.90.194:3002/signup",
   {
     email,
     password,

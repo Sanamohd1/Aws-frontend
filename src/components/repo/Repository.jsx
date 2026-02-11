@@ -17,7 +17,7 @@ const Repository = () => {
       : null;
 
 const apiUrl =
-  import.meta.env.VITE_API_URL || "http://54.91.163.152:3002";
+  import.meta.env.VITE_API_URL || "http://52.91.90.194:3002";
 
   useEffect(() => {
     if (!id || id === "undefined" || id === "null") {

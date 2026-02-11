@@ -29,7 +29,7 @@ const Issue = () => {
   const fetchIssue = async () => {
     try {
       const res = await fetch(
-        `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}`
+        `http://52.91.90.194:3002/repo/${repoId}/issues/${issueId}`
       );
       if (!res.ok) throw new Error();
       const data = await res.json();
@@ -44,7 +44,7 @@ const Issue = () => {
   const fetchRepository = async () => {
     try {
       const res = await fetch(
-        `http://54.91.163.152:3002/repo/${repoId}`
+        `http://52.91.90.194:3002/repo/${repoId}`
       );
       const data = await res.json();
       setRepository(data);
@@ -56,7 +56,7 @@ const Issue = () => {
   const fetchComments = async () => {
     try {
       const res = await fetch(
-        `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/comments`
+        `http://52.91.90.194:3002/repo/${repoId}/issues/${issueId}/comments`
       );
       if (!res.ok) return;
       const data = await res.json();
@@ -71,7 +71,7 @@ const Issue = () => {
     if (!newComment.trim()) return;
 
     const res = await fetch(
-      `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/comment`,
+      `http://52.91.90.194:3002/repo/${repoId}/issues/${issueId}/comment`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -90,7 +90,7 @@ const Issue = () => {
 
   const handleCloseIssue = async () => {
     await fetch(
-      `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/close`,
+      `http://52.91.90.194:3002/repo/${repoId}/issues/${issueId}/close`,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -102,7 +102,7 @@ const Issue = () => {
 
   const handleReopenIssue = async () => {
     await fetch(
-      `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/reopen`,
+      `http://52.91.90.194:3002/repo/${repoId}/issues/${issueId}/reopen`,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },

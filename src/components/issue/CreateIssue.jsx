@@ -32,7 +32,7 @@ const CreateIssue = () => {
 
    try {
   const res = await fetch(
-    `http://54.91.163.152:3002/repo/${repoId}/issues`,
+    `http://52.91.90.194:3002/repo/${repoId}/issues`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },

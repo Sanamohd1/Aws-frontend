@@ -31,7 +31,7 @@ const IssueList = () => {
 
  const fetchRepository = async () => {
   try {
-    const res = await fetch(`http://54.91.163.152:3002/repo/${repoId}`);
+    const res = await fetch(`http://52.91.90.194:3002/repo/${repoId}`);
     const data = await res.json();
     console.log("Repository fetched:", data);
     setRepository(data);
@@ -42,7 +42,7 @@ const IssueList = () => {
 
 const fetchIssues = async () => {
   try {
-    const url = `http://54.91.163.152:3002/repo/${repoId}/issues?status=${filter}`;
+    const url = `http://52.91.90.194:3002/repo/${repoId}/issues?status=${filter}`;
     console.log("Fetching issues from:", url);
     
     const res = await fetch(url);

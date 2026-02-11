@@ -9,7 +9,7 @@ const StarredRepos = () => {
     const fetchStarred = async () => {
       const userID = localStorage.getItem("userId");
 const apiUrl =
-  import.meta.env.VITE_API_URL || "http://54.91.163.152:3002";
+  import.meta.env.VITE_API_URL || "http://52.91.90.194:3002";
       try {
         // Hits the new GET route for starred repos
         const response = await axios.get(`${apiUrl}/repo/starred/${userID}`);

@@ -24,7 +24,7 @@ const Login = () => {
    try {
   setLoading(true);
 const res = await axios.post(
-  "http://54.91.163.152:3002/login",
+  "http://52.91.90.194:3002/login",
   {
     email,
     password,

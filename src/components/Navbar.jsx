@@ -16,7 +16,7 @@ const Navbar = () => {
       return;
     }
     
-fetch(`http://54.91.163.152:3002/repo/user/${userId}`)
+fetch(`http://52.91.90.194:3002/repo/user/${userId}`)
       .then(res => res.json())
       .then(data => {
         const repos = data.repositories || [];
