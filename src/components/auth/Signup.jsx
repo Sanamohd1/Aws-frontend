@@ -25,11 +25,15 @@ const Signup = () => {
       setLoading(true);
       setErrorMessage("");
 
-      const res = await axios.post("http://localhost:3002/signup", {
-        email,
-        password,
-        username,
-      });
+    const res = await axios.post(
+  "http://54.91.163.152:3002/signup",
+  {
+    email,
+    password,
+    username,
+  }
+);
+
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("userId", res.data.userId);

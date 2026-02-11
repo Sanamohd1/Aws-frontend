@@ -29,32 +29,33 @@ const IssueList = () => {
     fetchIssues();
   }, [repoId, filter]);
 
-  const fetchRepository = async () => {
-    try {
-      const res = await fetch(`http://localhost:3002/repo/${repoId}`);
-      const data = await res.json();
-      console.log("Repository fetched:", data);
-      setRepository(data);
-    } catch (err) {
-      console.error("Error fetching repository:", err);
-    }
-  };
+ const fetchRepository = async () => {
+  try {
+    const res = await fetch(`http://54.91.163.152:3002/repo/${repoId}`);
+    const data = await res.json();
+    console.log("Repository fetched:", data);
+    setRepository(data);
+  } catch (err) {
+    console.error("Error fetching repository:", err);
+  }
+};
 
-  const fetchIssues = async () => {
-    try {
-      const url = `http://localhost:3002/repo/${repoId}/issues?status=${filter}`;
-      console.log("Fetching issues from:", url);
-      
-      const res = await fetch(url);
-      const data = await res.json();
-      console.log("Issues fetched:", data);
-      setIssues(data);
-    } catch (err) {
-      console.error("Error fetching issues:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
+const fetchIssues = async () => {
+  try {
+    const url = `http://54.91.163.152:3002/repo/${repoId}/issues?status=${filter}`;
+    console.log("Fetching issues from:", url);
+    
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log("Issues fetched:", data);
+    setIssues(data);
+  } catch (err) {
+    console.error("Error fetching issues:", err);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   if (!repoId) {
     return (

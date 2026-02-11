@@ -23,7 +23,7 @@ const Profile = () => {
       if (userId && userId !== "undefined" && userId !== "null") {
         try {
           const response = await axios.get(
-            `http://localhost:3002/userProfile/${userId}`,
+`http://54.91.163.152:3002/userProfile/${userId}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,

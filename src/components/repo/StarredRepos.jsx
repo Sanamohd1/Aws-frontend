@@ -8,7 +8,8 @@ const StarredRepos = () => {
   useEffect(() => {
     const fetchStarred = async () => {
       const userID = localStorage.getItem("userId");
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+const apiUrl =
+  import.meta.env.VITE_API_URL || "http://54.91.163.152:3002";
       try {
         // Hits the new GET route for starred repos
         const response = await axios.get(`${apiUrl}/repo/starred/${userID}`);

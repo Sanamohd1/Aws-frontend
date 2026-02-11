@@ -22,9 +22,10 @@ const Dashboard = () => {
           return;
         }
 
-        const response = await fetch(
-          `http://localhost:3002/repo/user/${userId}`
-        );
+       const response = await fetch(
+  `http://54.91.163.152:3002/repo/user/${userId}`
+);
+
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -39,12 +40,13 @@ const Dashboard = () => {
     };
 
     const fetchSuggestedRepositories = async () => {
-      try {
-        const response = await fetch("http://localhost:3002/repo/all");
+  try {
+    const response = await fetch("http://54.91.163.152:3002/repo/all");
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
 
         const data = await response.json();
         setSuggestedRepositories(data || []);

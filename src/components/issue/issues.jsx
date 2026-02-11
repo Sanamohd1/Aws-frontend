@@ -29,7 +29,7 @@ const Issue = () => {
   const fetchIssue = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3002/repo/${repoId}/issues/${issueId}`
+        `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}`
       );
       if (!res.ok) throw new Error();
       const data = await res.json();
@@ -43,7 +43,9 @@ const Issue = () => {
 
   const fetchRepository = async () => {
     try {
-      const res = await fetch(`http://localhost:3002/repo/${repoId}`);
+      const res = await fetch(
+        `http://54.91.163.152:3002/repo/${repoId}`
+      );
       const data = await res.json();
       setRepository(data);
     } catch (err) {
@@ -54,7 +56,7 @@ const Issue = () => {
   const fetchComments = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3002/repo/${repoId}/issues/${issueId}/comments`
+        `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/comments`
       );
       if (!res.ok) return;
       const data = await res.json();
@@ -69,7 +71,7 @@ const Issue = () => {
     if (!newComment.trim()) return;
 
     const res = await fetch(
-      `http://localhost:3002/repo/${repoId}/issues/${issueId}/comment`,
+      `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/comment`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -88,7 +90,7 @@ const Issue = () => {
 
   const handleCloseIssue = async () => {
     await fetch(
-      `http://localhost:3002/repo/${repoId}/issues/${issueId}/close`,
+      `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/close`,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -100,7 +102,7 @@ const Issue = () => {
 
   const handleReopenIssue = async () => {
     await fetch(
-      `http://localhost:3002/repo/${repoId}/issues/${issueId}/reopen`,
+      `http://54.91.163.152:3002/repo/${repoId}/issues/${issueId}/reopen`,
       {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -116,8 +118,6 @@ const Issue = () => {
     if (diff < 1440) return `${Math.floor(diff / 60)} hours ago`;
     return `${Math.floor(diff / 1440)} days ago`;
   };
-
-
 
   if (loading) {
     return (
@@ -137,16 +137,12 @@ const Issue = () => {
     );
   }
 
- 
-
   return (
     <>
       <Navbar />
 
       <div className="issue-page">
         <div className="issue-container">
-
-          {/* HEADER */}
           <div className="issue-header">
             <div className="breadcrumb">
               <span onClick={() => navigate(`/repo/${repoId}`)}>
@@ -173,12 +169,9 @@ const Issue = () => {
             </div>
           </div>
 
-          {/* CONTENT */}
           <div className="issue-content-wrapper">
             <div className="issue-main">
               <div className="timeline">
-
-                {/* Issue body */}
                 <div className="timeline-item">
                   <div className="timeline-avatar">
                     <div className="avatar-circle" />
@@ -196,7 +189,6 @@ const Issue = () => {
                   </div>
                 </div>
 
-                {/* Comments */}
                 {comments.map((c) => (
                   <div key={c._id} className="timeline-item">
                     <div className="timeline-avatar">
@@ -215,7 +207,6 @@ const Issue = () => {
                 ))}
               </div>
 
-              {/* Add comment */}
               <div className="add-comment-section">
                 <div className="timeline-item">
                   <div className="timeline-avatar">

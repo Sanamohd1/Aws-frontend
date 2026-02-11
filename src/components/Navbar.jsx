@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./navbar.css";
+import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Navbar = () => {
       return;
     }
     
-    fetch(`http://localhost:3002/repo/user/${userId}`)
+fetch(`http://54.91.163.152:3002/repo/user/${userId}`)
       .then(res => res.json())
       .then(data => {
         const repos = data.repositories || [];

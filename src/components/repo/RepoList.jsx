@@ -9,8 +9,11 @@ const RepoList = () => {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState(""); 
 
-  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3002";
-  const currentUserID = localStorage.getItem("userId");
+const apiUrl =
+  import.meta.env.VITE_API_URL || "http://54.91.163.152:3002";
+
+const currentUserID = localStorage.getItem("userId");
+
 
   const fetchRepos = async () => {
     if (!currentUserID || currentUserID === "undefined" || currentUserID === "null") {

@@ -30,16 +30,20 @@ const CreateIssue = () => {
     setLoading(true);
     setError("");
 
-    try {
-      const res = await fetch(`http://localhost:3002/repo/${repoId}/issues`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title,
-          description,
-          userId: currentUser, 
-        }),
-      });
+   try {
+  const res = await fetch(
+    `http://54.91.163.152:3002/repo/${repoId}/issues`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title,
+        description,
+        userId: currentUser,
+      }),
+    }
+  );
+
 
       if (!res.ok) {
         const errorData = await res.json();

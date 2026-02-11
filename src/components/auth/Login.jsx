@@ -23,11 +23,14 @@ const Login = () => {
 
    try {
   setLoading(true);
-
-  const res = await axios.post("http://localhost:3002/login", {
+const res = await axios.post(
+  "http://54.91.163.152:3002/login",
+  {
     email,
     password,
-  });
+  }
+);
+
 
   console.log("=== LOGIN RESPONSE DEBUG ===");
   console.log("Full response:", res);

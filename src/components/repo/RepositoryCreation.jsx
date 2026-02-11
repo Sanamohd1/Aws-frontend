@@ -65,7 +65,8 @@ const RepositoryCreation = () => {
         issues: []
       };
 
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+const apiUrl =
+  import.meta.env.VITE_API_URL || "http://54.91.163.152:3002";
 
       const response = await fetch(`${apiUrl}/repo/create`, {
         method: 'POST',
